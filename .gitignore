@@ -1,3 +1,4 @@
 /vendor
 /run.bat
 /app-error.log
+/config.json
