@@ -33,29 +33,9 @@ class ChatModerator
     }
 
     public function IsURLAllowed(string $URL): bool
-    {   
-        $Scheme = parse_url($URL, PHP_URL_SCHEME);
-        $URL = !isset($Scheme) ? "http://{$URL}" : $URL;
-
-        $Domain = parse_url($URL, PHP_URL_HOST) ?? '';
-        $Domain = mb_strtolower($Domain);
-
-        if(in_array($Domain, $this->WhitelistedDomains))
-            return true;
-
-        $Allowed = false;
-
-        foreach($this->WhitelistedDomains as $WhitelistedDomain )
-        {
-            $WhitelistedDomain = '.' . $WhitelistedDomain;
-            if(strpos($Domain, $WhitelistedDomain) === (strlen($Domain) - strlen($WhitelistedDomain)))
-            {
-                $Allowed = true;
-                break;
-            }
-        }
-
-        return $Allowed;
+    {
+        $WhitelistedDomainsString = implode('|', $this->WhitelistedDomains);
+        return preg_match("/^((http:\/\/)|(https:\/\/)|)(((.*)(\.))|)($WhitelistedDomainsString)((\/)|$)/", $URL);
     }
 
     public function GetLinksFromMessage(Message $Message): array
