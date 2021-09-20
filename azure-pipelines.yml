@@ -22,8 +22,8 @@ steps:
     php -version
   displayName: 'Use PHP version $(phpVersion)'
 
-- script: composer install --no-interaction --prefer-dist
-  displayName: 'composer install --ignore-platform-reqs'
+- script: composer install --no-interaction --prefer-dist --ignore-platform-reqs
+  displayName: 'composer install'
 
 - task: FtpUpload@2
   inputs:
