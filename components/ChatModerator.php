@@ -61,7 +61,6 @@ class ChatModerator
     public function GetLinksFromMessage(Message $Message): array
     {
         $Links = [];
-
         $Entities = $Message->Entities ?? $Message->CaptionEntities;
 
         if($Entities != null && $Entities instanceof MessageEntities)
@@ -72,13 +71,15 @@ class ChatModerator
             {
                 if($Entity instanceof MessageEntity)
                 {
-                    if($Entity->Type == 'text_link')
+                    switch($Entity->Type)
                     {
-                        $Links[] = $Entity->Url;
-                    }
-                    else if($Entity->Type == 'url')
-                    {
-                        $Links[] = mb_substr($Text, $Entity->Offset, $Entity->Length);
+                        case 'text_link':
+                            $Links[] = $Entity->Url;
+                            break;
+                        
+                        case 'url':
+                            $Links[] = mb_substr($Text, $Entity->Offset, $Entity->Length);
+                            break;
                     }
                 }
             }
