@@ -1,0 +1,13 @@
+{
+    "Name": "Vagachat Bot",
+    "Token": "2039250875:AAHX6kTnr1tZ52eKCpIgykNxNyBxnbuPkRQ",
+    "AdminContact": "@WeRtOG",
+    "AllowGroups": true,
+    "ButtonsAutoSize": true,
+    "DatabaseConnection": {
+        "Server": "localhost",
+        "User": "",
+        "Password": "",
+        "Database": ""
+    }
+}

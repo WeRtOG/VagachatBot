@@ -1,0 +1,12 @@
+{
+    "allowed": [
+        "google.com", 
+        "youtube.com",
+        "youtu.be",
+        "spotify.com", 
+        "wikihow.com", 
+        "wikipedia.org",
+        "xn--f1a2b.art",
+        "жщ.art"
+    ]
+}

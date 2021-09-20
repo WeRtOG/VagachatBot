@@ -1,0 +1,9 @@
+{
+    "name": "wertog/vagachat-bot",
+    "description": "-",
+    "type": "project",
+    "require": {
+        "wertog/bottogram": "dev-main"
+    },
+    "minimum-stability": "dev"
+}
