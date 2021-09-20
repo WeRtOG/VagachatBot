@@ -1,0 +1,22 @@
+<Files "config.json">  
+  Require all denied
+</Files>
+<Files "dialogs.json">  
+  Require all denied
+</Files>
+<Files "composer.json">  
+  Require all denied
+</Files>
+<Files "composer.lock">  
+  Require all denied
+</Files>
+<Files "phpunit.xml">  
+  Require all denied
+</Files>
+<Files "README.md">  
+  Require all denied
+</Files>
+<Files "azure-pipelines.yml">  
+  Require all denied
+</Files>
+Options -Indexes
