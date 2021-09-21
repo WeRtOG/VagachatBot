@@ -35,7 +35,8 @@ class ChatModerator
     public function IsURLAllowed(string $URL): bool
     {
         $WhitelistedDomainsString = implode('|', $this->WhitelistedDomains);
-        return preg_match("/^((http:\/\/)|(https:\/\/)|)(((.*)(\.))|)($WhitelistedDomainsString)((\/)|$)/", $URL);
+        
+        return preg_match("/^(?i)((http:\/\/)|(https:\/\/)|)(((.*)(\.))|)($WhitelistedDomainsString)((\/)|$)/", $URL);
     }
 
     public function GetLinksFromMessage(Message $Message): array
@@ -58,7 +59,7 @@ class ChatModerator
                             break;
                         
                         case 'url':
-                            $Links[] = mb_substr($Text, $Entity->Offset, $Entity->Length);
+                            $Links[] = mb_substr($Text, $Entity->Offset, $Entity->Length, 'utf-8');
                             break;
                     }
                 }
@@ -71,12 +72,14 @@ class ChatModerator
     public function IsMessageNotSafe(Message $Message): bool
     {
         $MessageLinks = $this->GetLinksFromMessage($Message);
+        $HasNotSafeLinks = false; 
 
         foreach($MessageLinks as $MessageLink)
         {
-            return !$this->IsURLAllowed($MessageLink) && $Message->SenderChat == null;
+            if(!$this->IsURLAllowed($MessageLink))
+                $HasNotSafeLinks = true;
         }
 
-        return false;
+        return $HasNotSafeLinks && $Message->SenderChat == null;
     }
 }
