@@ -27,15 +27,13 @@ steps:
 
 - task: FtpUpload@2
   inputs:
-    credentialsOption: 'inputs'
-    serverUrl: 'ftp://81.16.28.209'
-    username: 'u827204158.admin'
-    password: 'G@v6nN@d~/6i'
+    credentialsOption: 'serviceEndpoint'
+    serverEndpoint: 'Production'
     rootDirectory: 
     filePatterns: '**'
     remoteDirectory: '/vagachat-bot'
+    enableUtf8: true
     clean: false
     cleanContents: false
     preservePaths: true
     trustSSL: false
-    enableUtf8: true
