@@ -429,12 +429,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WeRtOG/BottoGram.git",
-                "reference": "51a54a202a0e1ff260dce150b4df7a17a3783ef4"
+                "reference": "e960a538e40b28a1500dc1b19c427d18e3fc331c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WeRtOG/BottoGram/zipball/51a54a202a0e1ff260dce150b4df7a17a3783ef4",
-                "reference": "51a54a202a0e1ff260dce150b4df7a17a3783ef4",
+                "url": "https://api.github.com/repos/WeRtOG/BottoGram/zipball/e960a538e40b28a1500dc1b19c427d18e3fc331c",
+                "reference": "e960a538e40b28a1500dc1b19c427d18e3fc331c",
                 "shasum": ""
             },
             "require": {
@@ -457,7 +457,7 @@
                 "issues": "https://github.com/WeRtOG/BottoGram/issues",
                 "source": "https://github.com/WeRtOG/BottoGram/tree/main"
             },
-            "time": "2021-09-20T01:27:13+00:00"
+            "time": "2021-10-01T23:49:26+00:00"
         },
         {
             "name": "wertog/foxy-mvc",
