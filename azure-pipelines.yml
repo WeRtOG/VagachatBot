@@ -28,7 +28,7 @@ steps:
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'serviceEndpoint'
-    serverEndpoint: 'Production'
+    serverEndpoint: 'Main'
     rootDirectory: ''
     filePatterns: '**'
     remoteDirectory: '/vagachat-bot'
