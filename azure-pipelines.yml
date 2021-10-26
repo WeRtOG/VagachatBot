@@ -31,7 +31,7 @@ steps:
     serverEndpoint: 'Main'
     rootDirectory: ''
     filePatterns: '**'
-    remoteDirectory: '/vagachat-bot'
+    remoteDirectory: '/projects/vagachat-bot'
     enableUtf8: true
     clean: false
     cleanContents: false
