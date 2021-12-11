@@ -28,10 +28,10 @@ steps:
 - task: FtpUpload@2
   inputs:
     credentialsOption: 'serviceEndpoint'
-    serverEndpoint: 'Production'
-    rootDirectory: 
+    serverEndpoint: 'Main'
+    rootDirectory: ''
     filePatterns: '**'
-    remoteDirectory: '/vagachat-bot'
+    remoteDirectory: '/projects/vagachat-bot'
     enableUtf8: true
     clean: false
     cleanContents: false
