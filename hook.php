@@ -113,8 +113,11 @@ if($Message != null)
             }
         }
 
+        // Получаем команду из сообщения (если есть)
+        $Command = $Message->Command != null ? explode('@', $Message->Command)[0] ?? $Message->Command : null;
+
         // Если получена команда бана (охх дальше и кода. пипееец. уж простите, кто читает)
-        if($Message->Command == '/ban')
+        if($Command == '/ban')
         {
             // Если юзер админ или чат
             if(ChatModerator::IsUserAdmin($Message->Chat->ID, $Message->From, $Telegram) || $Message->Chat->ID == $Message->SenderChat?->ID)
