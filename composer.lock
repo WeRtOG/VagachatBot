@@ -97,12 +97,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/promises.git",
-                "reference": "c1dd809c8f51a477701052f4b9e5b4bb5c1061aa"
+                "reference": "fe752aedc9fd8fcca3fe7ad05d419d32998a06da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/promises/zipball/c1dd809c8f51a477701052f4b9e5b4bb5c1061aa",
-                "reference": "c1dd809c8f51a477701052f4b9e5b4bb5c1061aa",
+                "url": "https://api.github.com/repos/guzzle/promises/zipball/fe752aedc9fd8fcca3fe7ad05d419d32998a06da",
+                "reference": "fe752aedc9fd8fcca3fe7ad05d419d32998a06da",
                 "shasum": ""
             },
             "require": {
@@ -115,7 +115,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.4-dev"
+                    "dev-master": "1.5-dev"
                 }
             },
             "autoload": {
@@ -158,7 +158,7 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/promises/issues",
-                "source": "https://github.com/guzzle/promises/tree/master"
+                "source": "https://github.com/guzzle/promises/tree/1.5.1"
             },
             "funding": [
                 {
@@ -174,7 +174,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-05T15:38:28+00:00"
+            "time": "2021-10-22T20:56:57+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -182,12 +182,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "9d006741ba865a45adccfac45d8e1053086a5a3f"
+                "reference": "1afdd860a2566ed3c2b0b4a3de6e23434a79ec85"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/9d006741ba865a45adccfac45d8e1053086a5a3f",
-                "reference": "9d006741ba865a45adccfac45d8e1053086a5a3f",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/1afdd860a2566ed3c2b0b4a3de6e23434a79ec85",
+                "reference": "1afdd860a2566ed3c2b0b4a3de6e23434a79ec85",
                 "shasum": ""
             },
             "require": {
@@ -270,7 +270,145 @@
                 "issues": "https://github.com/guzzle/psr7/issues",
                 "source": "https://github.com/guzzle/psr7/tree/1.x"
             },
-            "time": "2021-09-05T19:11:18+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/Nyholm",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/guzzlehttp/psr7",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-10-05T13:56:00+00:00"
+        },
+        {
+            "name": "matthiasmullie/minify",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiasmullie/minify.git",
+                "reference": "0cf6c085b1dde107e375a5938e2e5033640de0e0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/0cf6c085b1dde107e375a5938e2e5033640de0e0",
+                "reference": "0cf6c085b1dde107e375a5938e2e5033640de0e0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "matthiasmullie/path-converter": "~1.1",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~2.0",
+                "matthiasmullie/scrapbook": "dev-master",
+                "phpunit/phpunit": ">=4.8"
+            },
+            "suggest": {
+                "psr/cache-implementation": "Cache implementation to use with Minify::cache"
+            },
+            "default-branch": true,
+            "bin": [
+                "bin/minifycss",
+                "bin/minifyjs"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MatthiasMullie\\Minify\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Mullie",
+                    "email": "minify@mullie.eu",
+                    "homepage": "http://www.mullie.eu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "CSS & JavaScript minifier, in PHP. Removes whitespace, strips comments, combines files (incl. @import statements and small assets in CSS files), and optimizes/shortens a few common programming patterns.",
+            "homepage": "http://www.minifier.org",
+            "keywords": [
+                "JS",
+                "css",
+                "javascript",
+                "minifier",
+                "minify"
+            ],
+            "support": {
+                "issues": "https://github.com/matthiasmullie/minify/issues",
+                "source": "https://github.com/matthiasmullie/minify/tree/master"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/matthiasmullie",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-07-20T11:50:15+00:00"
+        },
+        {
+            "name": "matthiasmullie/path-converter",
+            "version": "1.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiasmullie/path-converter.git",
+                "reference": "e7d13b2c7e2f2268e1424aaed02085518afa02d9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthiasmullie/path-converter/zipball/e7d13b2c7e2f2268e1424aaed02085518afa02d9",
+                "reference": "e7d13b2c7e2f2268e1424aaed02085518afa02d9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MatthiasMullie\\PathConverter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Mullie",
+                    "email": "pathconverter@mullie.eu",
+                    "homepage": "http://www.mullie.eu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Relative path converter",
+            "homepage": "http://github.com/matthiasmullie/path-converter",
+            "keywords": [
+                "converter",
+                "path",
+                "paths",
+                "relative"
+            ],
+            "support": {
+                "issues": "https://github.com/matthiasmullie/path-converter/issues",
+                "source": "https://github.com/matthiasmullie/path-converter/tree/1.1.3"
+            },
+            "time": "2019-02-05T23:41:09+00:00"
         },
         {
             "name": "psr/http-client",
@@ -429,16 +567,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WeRtOG/BottoGram.git",
-                "reference": "e960a538e40b28a1500dc1b19c427d18e3fc331c"
+                "reference": "fdff0fade9e4ca006d2cc0d250f823f658836bd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WeRtOG/BottoGram/zipball/e960a538e40b28a1500dc1b19c427d18e3fc331c",
-                "reference": "e960a538e40b28a1500dc1b19c427d18e3fc331c",
+                "url": "https://api.github.com/repos/WeRtOG/BottoGram/zipball/fdff0fade9e4ca006d2cc0d250f823f658836bd1",
+                "reference": "fdff0fade9e4ca006d2cc0d250f823f658836bd1",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": "7.0",
+                "matthiasmullie/minify": "dev-master",
                 "wertog/foxy-mvc": "dev-main"
             },
             "default-branch": true,
@@ -457,7 +596,7 @@
                 "issues": "https://github.com/WeRtOG/BottoGram/issues",
                 "source": "https://github.com/WeRtOG/BottoGram/tree/main"
             },
-            "time": "2021-10-01T23:49:26+00:00"
+            "time": "2021-12-10T20:19:59+00:00"
         },
         {
             "name": "wertog/foxy-mvc",
@@ -465,12 +604,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WeRtOG/FoxyMVC.git",
-                "reference": "dda444d62aae1dc9d4328ea0c64a474e597167a2"
+                "reference": "5cdcab00df181a4d0030dccdcf4035614eefdcb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WeRtOG/FoxyMVC/zipball/dda444d62aae1dc9d4328ea0c64a474e597167a2",
-                "reference": "dda444d62aae1dc9d4328ea0c64a474e597167a2",
+                "url": "https://api.github.com/repos/WeRtOG/FoxyMVC/zipball/5cdcab00df181a4d0030dccdcf4035614eefdcb2",
+                "reference": "5cdcab00df181a4d0030dccdcf4035614eefdcb2",
                 "shasum": ""
             },
             "default-branch": true,
@@ -489,7 +628,7 @@
                 "issues": "https://github.com/WeRtOG/FoxyMVC/issues",
                 "source": "https://github.com/WeRtOG/FoxyMVC/tree/main"
             },
-            "time": "2021-07-20T18:32:20+00:00"
+            "time": "2021-10-14T01:44:56+00:00"
         }
     ],
     "packages-dev": [],

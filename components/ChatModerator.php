@@ -2,9 +2,12 @@
 
 namespace WeRtOG\VagachatBot;
 
+use WeRtOG\BottoGram\Telegram\Model\ChatMember;
 use WeRtOG\BottoGram\Telegram\Model\Message;
 use WeRtOG\BottoGram\Telegram\Model\MessageEntities;
 use WeRtOG\BottoGram\Telegram\Model\MessageEntity;
+use WeRtOG\BottoGram\Telegram\Model\User;
+use WeRtOG\BottoGram\Telegram\Telegram;
 
 class ChatModerator
 {
@@ -69,8 +72,10 @@ class ChatModerator
         return $Links;
     }
 
-    public function IsMessageNotSafe(Message $Message): bool
+    public function IsMessageNotSafe(Message $Message, array $BanFreeChannels): bool
     {
+        $IsFromBanFreeChannels = in_array((string)$Message->SenderChat?->ID, $BanFreeChannels) || $Message->Chat->ID == $Message->SenderChat?->ID;
+        
         $MessageLinks = $this->GetLinksFromMessage($Message);
         $HasNotSafeLinks = false; 
 
@@ -80,6 +85,38 @@ class ChatModerator
                 $HasNotSafeLinks = true;
         }
 
-        return $HasNotSafeLinks && $Message->SenderChat == null;
+        return $HasNotSafeLinks && !$IsFromBanFreeChannels;
+    }
+    
+    public static function IsUserAdmin(int $ChatID, User $User, Telegram $Telegram): bool
+    {
+        $ChatAdministrators = $Telegram->GetChatAdministrators($ChatID) ?? [];
+
+        foreach($ChatAdministrators as $ChatAdministrator)
+        {
+            if($ChatAdministrator instanceof ChatMember && $ChatAdministrator->User->ID == $User->ID)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public static function MessageFromChannel(Message $Message): bool
+    {
+        return $Message->SenderChat != null;
+    }
+
+    public static function DeleteMessagesFromChannel(string $ChatID, string $ChannelID, ChatChannelsManager $ChatChannelsManager, Telegram $Telegram)
+    {
+        $Messages = $ChatChannelsManager->GetChannelMessages($ChatID, $ChannelID);
+
+        foreach($Messages as $MessageID)
+        {
+            $Telegram->DeleteMessage($ChatID, $MessageID);
+        }
+
+        $ChatChannelsManager->DeleteChannelMessages($ChatID, $ChannelID);
     }
 }
