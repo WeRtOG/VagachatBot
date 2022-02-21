@@ -186,7 +186,7 @@ if($Message != null)
             // Если сообщение от недостойного
             else
             {
-                $Telegram->SendMessage($Message->Chat->ID, '🙅‍♂️ Доступ к этой команде доступен только у администраторов чата' , ReplyToMessageID: $Message->MessageID); 
+                $Telegram->DeleteMessage($Message->Chat->ID, $Message->MessageID); 
             }
         }
     }
